@@ -1,0 +1,47 @@
+.game-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "filter"
+    "content";
+  grid-gap: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  grid-template-rows: 10% 15%;
+  height: calc(100vh - 25px);
+  background: rgba(35, 35, 35, 0.6);
+  backdrop-filter: blur(5px);
+  height: 100%;
+}
+
+.game-header {
+  grid-area: header;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: white;
+}
+
+/* .game-header-text {
+  color: #673bb7;
+  background-color: rgba(225, 225, 225, 0.99);
+  padding: 10px;
+  border-radius: 10px;
+} */
+
+.game-filter {
+  grid-area: filter;
+}
+
+.game-content {
+  grid-area: content;
+  overflow: auto;
+}
+
+.game-container  > div {
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+}

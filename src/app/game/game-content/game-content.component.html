@@ -1,0 +1,17 @@
+<div class="gm-content-container">
+  <mat-card class="mat-card" *ngFor="let game of gameData;">
+
+    <mat-card-header class="gm-card-header-container">
+      <mat-card-title class="gm-card-header">{{game.title}}</mat-card-title>
+      <mat-card-subtitle class="gm-card-header-star">
+        <mat-icon *ngFor="let score of [].constructor(((''+game.score).split('.')[0])*1);">star</mat-icon>
+        <mat-icon *ngIf="((''+game.score).split('.')[1])*1>5">star_half</mat-icon>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="gm-card-container-content">
+      <span>{{game.platform}}</span>
+      <span>{{game.genre}}</span>
+      <span class="gm-card-editor" *ngIf="game.editors_choice == 'Y'">Editor's Choice</span>
+    </mat-card-content>
+  </mat-card>
+</div>

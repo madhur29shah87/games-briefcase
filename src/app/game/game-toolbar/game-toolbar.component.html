@@ -1,0 +1,42 @@
+<mat-toolbar class="gm-toolbar-custom">
+  <mat-form-field class="gm-search">
+    <input
+      type="text"
+      placeholder="Search Game"
+      aria-label="String"
+      matInput
+      [formControl]="gameNameControl"
+      [matAutocomplete]="autoSearch"
+      (change)="updateSearchData($event)"
+    />
+    <mat-autocomplete
+      #autoSearch="matAutocomplete"
+      (optionSelected)="updateSearchData($event)"
+    >
+      <mat-option *ngFor="let game of gameFilter | async" [value]="game">
+        {{ game }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <span class="mat-toolbar-spacer"></span>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="sort">
+    <mat-icon>filter_list</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <ng-template matMenuContent>
+      <button mat-menu-item (click)="updateSort('ASC')">
+        <mat-icon>arrow_upward</mat-icon>
+        <span>Sort by ASC Rating</span>
+      </button>
+      <button mat-menu-item (click)="updateSort('DESC')">
+        <mat-icon>arrow_downward</mat-icon>
+        <span>Sort by DESC Rating</span>
+      </button>
+      <button mat-menu-item *ngFor="let platform of platforms" (click)="updateSort(platform)">
+        <!-- <img class="gm-menu-icon" src="{{assets/images/flight}}.png" /> -->
+        <span>{{platform}}</span>
+      </button>
+    </ng-template>
+  </mat-menu>
+</mat-toolbar>

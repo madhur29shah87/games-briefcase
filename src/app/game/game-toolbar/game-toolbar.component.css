@@ -1,0 +1,27 @@
+:host {
+  width: 100%;
+  --primary-color: #673bb7;
+  --accent-color: #ffd740;
+}
+.mat-toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+::ng-deep.mat-tab-label,
+::ng-deep.mat-tab-label-active {
+  min-width: 0px !important;
+}
+::ng-deep.mat-toolbar {
+  color: var(--primary-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  /* background-color: white; */
+}
+
+.gm-toolbar-custom {
+  border-radius: 10px;
+}
+
+.gm-search {
+  font-size: 15px;
+  width: 150px;
+}

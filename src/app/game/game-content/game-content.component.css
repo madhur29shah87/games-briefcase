@@ -1,0 +1,89 @@
+:host {
+  width: 100%;
+  height: 100%;
+  --primary-color: #673bb7;
+  --accent-color: #ffd740;
+}
+
+.gm-content-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.gm-content-container > mat-card {
+  width: 200px;
+  height: 200px;
+  /* display: flex;
+  justify-content: center; */
+  color: var(--primary-color);
+}
+.mat-card {
+  max-width: 200px;
+  border-radius: 10px;
+  margin: 20px;
+  transition: 0.5s ease;
+}
+
+.mat-card:hover {
+  transform: scale(1.15);
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
+
+.gm-card-header-container {
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 2px var(--accent-color);
+  height: 30%;
+}
+/* ::ng-deep.mat-card-header-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} */
+.gm-card-header {
+  height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
+  letter-spacing: 1px;
+}
+
+.gm-card-header-star {
+  display: flex;
+  align-items: center;
+  color: var(--accent-color);
+  justify-content: flex-start;
+  height: 25px;
+}
+
+.gm-card-header-star::ng-deep.mat-icon {
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+}
+
+.gm-card-container-content {
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70%;
+  font-size: 16px;
+}
+
+.gm-card-editor {
+  font-weight: 600;
+}
+
+.gm-card-editor::before {
+  content: "*( ";
+}
+.gm-card-editor::after {
+  content: " )*";
+}
